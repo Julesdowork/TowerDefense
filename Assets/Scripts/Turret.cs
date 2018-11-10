@@ -6,11 +6,11 @@ public class Turret : MonoBehaviour {
 
     [Header ("Attributes")]
     public float range = 15f;
-    public float turnSpeed = 10f;
     public float fireRate = 1f;
 
     [Header ("Unity Setup Fields")]
     public string enemyTag = "Enemy";
+    public float turnSpeed = 10f;
     public Transform rotator;
     public GameObject bulletPrefab;
     public Transform firePoint;
