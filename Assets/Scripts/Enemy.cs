@@ -3,6 +3,9 @@
 public class Enemy : MonoBehaviour {
 
     public float speed = 10f;
+    public int health = 100;
+    public int value = 50;
+    public GameObject deathEffect;
 
     private Transform target;
     private int waypointIndex = 0;
@@ -23,15 +26,39 @@ public class Enemy : MonoBehaviour {
         }
     }
 
+    public void TakeDamage(int amount)
+    {
+        health -= amount;
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        PlayerStats.Money += value;
+
+        GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
+        Destroy(effect, 5f);
+        Destroy(gameObject);
+    }
+
     void GetNextWaypoint()
     {
         if (waypointIndex >= Waypoints.waypoints.Length - 1)
         {
-            Destroy(gameObject);
+            EndPath();
             return;
         }
 
         waypointIndex++;
         target = Waypoints.waypoints[waypointIndex];
+    }
+
+    void EndPath()
+    {
+        PlayerStats.Lives--;
+        Destroy(gameObject);
     }
 }
