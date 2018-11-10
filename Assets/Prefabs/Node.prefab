@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1167266085150726}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 75, y: 0, z: -20}
   m_LocalScale: {x: 4, y: 1, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
@@ -110,3 +110,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverColor: {r: 0.5660378, g: 0.5633678, b: 0.5633678, a: 0}
   positionOffset: {x: 0, y: 0.5, z: 0}
+  turret: {fileID: 0}

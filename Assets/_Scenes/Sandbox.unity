@@ -1275,7 +1275,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50.000004, y: -280.185, z: 0}
 --- !u!1 &172498663 stripped
 GameObject:
@@ -2073,7 +2073,7 @@ Transform:
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &270300945
 Prefab:
@@ -2278,6 +2278,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b93fda1375ee3e04494b8a4eb681b304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  standardTurret:
+    prefab: {fileID: 1266875662377402, guid: f4de019296b1d1047aea60c2d6928cab, type: 2}
+    cost: 100
+  missileLauncher:
+    prefab: {fileID: 1545099945542552, guid: ae206aa974576b748a5a65fcd1797e29, type: 2}
+    cost: 250
 --- !u!1001 &302671187
 Prefab:
   m_ObjectHideFlags: 0
@@ -3379,7 +3385,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 70.879005, y: 90, z: 0}
 --- !u!114 &534669906
 MonoBehaviour:
@@ -3948,7 +3954,7 @@ Transform:
   - {fileID: 756015647}
   - {fileID: 1026886461}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &649011627
 Prefab:
@@ -6837,6 +6843,7 @@ GameObject:
   - component: {fileID: 1099164714}
   - component: {fileID: 1099164713}
   - component: {fileID: 1099164715}
+  - component: {fileID: 1099164716}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -6871,7 +6878,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1099164715
 MonoBehaviour:
@@ -6888,6 +6895,18 @@ MonoBehaviour:
     type: 2}
   missileLauncherPrefab: {fileID: 1545099945542552, guid: ae206aa974576b748a5a65fcd1797e29,
     type: 2}
+--- !u!114 &1099164716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1099164712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bd9394789997374390d401466d9797e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startMoney: 400
 --- !u!1001 &1107917286
 Prefab:
   m_ObjectHideFlags: 0
@@ -7383,7 +7402,7 @@ Transform:
   - {fileID: 2065807650}
   - {fileID: 1150675007}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1170627645 stripped
 GameObject:
@@ -8446,7 +8465,7 @@ Prefab:
     - target: {fileID: 114334922999363030, guid: b14ff9784c664e940a98be404f6dfe0f,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PurchaseMissileLauncher
+      value: SelectMissileLauncher
       objectReference: {fileID: 0}
     - target: {fileID: 114451250705052754, guid: b14ff9784c664e940a98be404f6dfe0f,
         type: 2}
@@ -9446,7 +9465,7 @@ Transform:
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1424213793 stripped
 GameObject:
@@ -14197,6 +14216,11 @@ Prefab:
       propertyPath: m_PreferredHeight
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 114334922999363030, guid: b14ff9784c664e940a98be404f6dfe0f,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectStandardTurret
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b14ff9784c664e940a98be404f6dfe0f, type: 2}
   m_IsPrefabAsset: 0
@@ -14259,7 +14283,7 @@ Transform:
   - {fileID: 167053961}
   - {fileID: 792869427}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2146883274
 Prefab:
