@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
-    private bool gameEnded = false;
+    public static bool gameEnded;
 
-	// Update is called once per frame
-	void Update () {
+    public GameObject gameOverUI;
+
+    void Start()
+    {
+        gameEnded = false;
+    }
+
+    // Update is called once per frame
+    void Update () {
         if (gameEnded)
             return;
 
@@ -20,6 +27,6 @@ public class GameManager : MonoBehaviour {
     void EndGame()
     {
         gameEnded = true;
-        Debug.Log("GAME OVER!!!");
+        gameOverUI.SetActive(true);
     }
 }
