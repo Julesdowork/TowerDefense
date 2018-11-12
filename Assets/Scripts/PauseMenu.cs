@@ -5,8 +5,6 @@ public class PauseMenu : MonoBehaviour {
 
     public GameObject ui;
 
-    private bool doMovement = true;
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
