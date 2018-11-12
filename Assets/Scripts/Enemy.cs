@@ -5,14 +5,14 @@ public class Enemy : MonoBehaviour {
 
     [HideInInspector] public float speed;
     public float startSpeed = 10f;
-    public float health;
+    public float startHealth = 100f;
     public int value = 50;
     public GameObject deathEffect;
 
     [Header("Unity Stuff")]
     public Image healthBar;
-
-    private float startHealth = 100f;
+    
+    private float health;
 
     void Start()
     {
@@ -42,6 +42,8 @@ public class Enemy : MonoBehaviour {
 
         GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(effect, 5f);
+
+        WaveSpawner.EnemiesAlive--;
         Destroy(gameObject);
     }
 }

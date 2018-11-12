@@ -19,6 +19,7 @@ public class Bullet : MonoBehaviour {
 
         Vector3 direction = target.position - transform.position;
         float distanceThisFrame = speed * Time.deltaTime;
+
         if (direction.magnitude <= distanceThisFrame)
         {
             HitTarget();
@@ -53,7 +54,8 @@ public class Bullet : MonoBehaviour {
         {
             Damage(target);
         }
-        
+
+        Destroy(gameObject);
     }
 
     void Explode()
