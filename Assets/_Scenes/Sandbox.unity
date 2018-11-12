@@ -2515,13 +2515,15 @@ MonoBehaviour:
   missileLauncher:
     prefab: {fileID: 1545099945542552, guid: ae206aa974576b748a5a65fcd1797e29, type: 2}
     cost: 250
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 0
+    upgradedPrefab: {fileID: 1545099945542552, guid: 0909b213924842d4eab87a4406565385,
+      type: 2}
+    upgradeCost: 150
   laserBeamer:
     prefab: {fileID: 1245392408753034, guid: 8a5ddaff9bcc6b44bb14cab6bea7f828, type: 2}
     cost: 350
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 0
+    upgradedPrefab: {fileID: 1245392408753034, guid: 7867cb1b2e067734ea189d09a278219a,
+      type: 2}
+    upgradeCost: 250
 --- !u!1001 &289877273
 Prefab:
   m_ObjectHideFlags: 0
@@ -8650,6 +8652,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildEffect: {fileID: 1916518879512744, guid: be5360793d5dcb54996fb5741c420e96,
     type: 2}
+  sellEffect: {fileID: 1916518879512744, guid: 64e3ad77a688c6b46833e01b97659ff1, type: 2}
   nodeUI: {fileID: 1639677882}
 --- !u!114 &1099164716
 MonoBehaviour:
@@ -9400,7 +9403,7 @@ GameObject:
   - component: {fileID: 1177540970}
   - component: {fileID: 1177540969}
   m_Layer: 0
-  m_Name: Cost
+  m_Name: Amount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10820,7 +10823,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1328240351}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1639677882}
+        m_MethodName: Sell
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1328240351
@@ -13708,6 +13722,7 @@ MonoBehaviour:
   ui: {fileID: 1395950672}
   upgradeCost: {fileID: 345843057}
   upgradeButton: {fileID: 1169271536}
+  sellAmount: {fileID: 1177540969}
 --- !u!1001 &1641122239
 Prefab:
   m_ObjectHideFlags: 0
