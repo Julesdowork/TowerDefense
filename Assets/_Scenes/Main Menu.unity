@@ -1229,7 +1229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27453178dd2e1704ebc8e21c4b3892c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: Sandbox
+  levelToLoad: Level Select
   fader: {fileID: 1079238143}
 --- !u!4 &1846922896
 Transform:
