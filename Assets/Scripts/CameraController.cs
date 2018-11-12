@@ -8,8 +8,6 @@ public class CameraController : MonoBehaviour {
     public float minY = 10f;
     public float maxY = 80f;
 
-    private bool doMovement = true;
-
 	// Update is called once per frame
 	void Update () {
         if (GameManager.gameEnded)
@@ -17,12 +15,6 @@ public class CameraController : MonoBehaviour {
             this.enabled = false;
             return;
         }
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-            doMovement = !doMovement;
-
-        if (!doMovement)
-            return;
 
         if (Input.GetKey("w") || Input.mousePosition.y >= Screen.height - panBorderThickness)
         {
