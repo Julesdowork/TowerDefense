@@ -4,10 +4,11 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour {
 
     public string levelToLoad = "Sandbox";
+    public SceneFader fader;
 
     public void Play()
     {
-        SceneManager.LoadScene(levelToLoad);
+        fader.FadeTo(levelToLoad);
     }
 
     public void Quit()
